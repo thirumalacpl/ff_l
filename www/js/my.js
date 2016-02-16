@@ -1,6 +1,6 @@
 document.addEventListener("deviceready", onDeviceReady, false);
 function onDeviceReady() {
-    //alert('ready');
+    alert('ready thiru');
   var db = window.sqlitePlugin.openDatabase({name: "my.db"});
 show();
   db.transaction(function(tx) {
@@ -31,8 +31,9 @@ var key = "";
        var len = results.rows.length, i;
        for (i=0; i<=len-1; i++) {
          key = results.rows.item(i).name;
+         eventa = results.rows.item(i).eventa;
          id = results.rows.item(i).id;
-         pair += "<tr><td><center>"+id+"</center></td><td><center>"+key+"</center></td><td><center>"+results.rows.item(i).email+"</center></td><td><a class=\"update\" href=\"#myPopupDialog\"  data-custom="+"'"+ id+ "'" +"data-rel=\"popup\" data-position-to=\"window\" data-transition=\"pop\"><center><i class='fa fa-pencil-square-o'></i></center></a></td><td><a  id=\"delete\" data=\""+id+"\"><center><i class='fa fa-trash'></i></center></a></td></tr>";
+         pair += "<tr><td><center>"+id+"</center></td><td><center>"+key+"</center></td><td><center>"+eventa+"</center></td><td><center>"+results.rows.item(i).email+"</center></td><td><a class=\"update\" href=\"#myPopupDialog\"  data-custom="+"'"+ id+ "'" +"data-rel=\"popup\" data-position-to=\"window\" data-transition=\"pop\"><center><i class='fa fa-pencil-square-o'></i></center></a></td><td><a  id=\"delete\" data=\""+id+"\"><center><i class='fa fa-trash'></i></center></a></td></tr>";
        }
        if (pair == "<tr><th>Name</th><th>Email</th><th>Event</th></tr>") {
          pair += "<tr><td><i>empty</i></td><td><i>empty</i></td><td><i>empty</i></td></tr>";
