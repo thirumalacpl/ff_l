@@ -1,6 +1,6 @@
 document.addEventListener("deviceready", onDeviceReady, false);
 function onDeviceReady() {
-    //alert('ready');
+    alert('ready thiru changes');
   var db = window.sqlitePlugin.openDatabase({name: "my.db"});
 show();
   db.transaction(function(tx) {
